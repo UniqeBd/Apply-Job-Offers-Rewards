@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USA Job Offers & Rewards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #ffd700, #ffffff, #ffd700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #f0f0f0;
+        }
+
+        .provider-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .provider-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .provider-header {
+            background: linear-gradient(to right, #2c3e50, #4a6491);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .provider-header h2 {
+            font-size: 1.8rem;
+            margin-left: 15px;
+        }
+
+        .provider-icon {
+            font-size: 28px;
+            background: white;
+            color: #2c3e50;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .offers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 30px;
+        }
+
+        .offer-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #eaeaea;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .offer-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: translateY(-7px);
+        }
+
+        .card-image {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .offer-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-content h3 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+        }
+
+        .card-content p {
+            color: #666;
+            flex-grow: 1;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #2980b9, #1a252f);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn i {
+            margin-left: 8px;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: white;
+            padding: 30px 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .offers-container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .provider-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>USA Job Offers & Rewards</h1>
+            <p>Discover exclusive job opportunities, remote work positions, and amazing rewards available across the United States</p>
+        </header>
+
+        <!-- Nexussnery Offers -->
+        <section class="provider-section">
+            <div class="provider-header">
+                <div class="provider-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h2>Nexussnery Offers</h2>
+            </div>
+            <div class="offers-container">
+                <div class="offer-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Expert Job Match">
+                    </div>
+                    <div class="card-content">
+                        <h3>Expert Job Match</h3>
+                        <p>Get matched with the perfect job based on your skills and experience. Our advanced algorithm connects you with employers looking for your expertise.</p>
+                        <a href="https://nx2bs.com/c?o=367&a=4070&s1=shoaib" class="btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Work From Home">
+                    </div>
+                    <div class="card-content">
+                        <h3>Work From Home</h3>
+                        <p>Discover flexible remote work opportunities that allow you to balance your career and personal life from the comfort of your home.</p>
+                        <a href="https://nx2bs.com/c?o=357&a=4070&s1=shoaib" class="btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trafee Offers -->
+        <section class="provider-section">
+            <div class="provider-header">
+                <div class="provider-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h2>Trafee Offers</h2>
+            </div>
+            <div class="offers-container">
+                <div class="offer-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Walmart Remote Job">
+                    </div>
+                    <div class="card-content">
+                        <h3>Walmart Remote Job</h3>
+                        <p>Join one of America's largest retailers in a remote position. Enjoy competitive pay, benefits, and the Walmart team experience from home.</p>
+                        <a href="https://cghecba.posttingoal.com/c/a81cdb16cc628?sub1=shoaib" class="btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1605733513597-a8f8341084e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Walmart Holiday Gift">
+                    </div>
+                    <div class="card-content">
+                        <h3>Walmart Holiday Gift</h3>
+                        <p>Special holiday promotion for Walmart employees. Claim your exclusive holiday gift package as a thank you for your hard work.</p>
+                        <a href="https://cghecba.posttingoal.com/c/876bcaca5c326?sub1=shoaib" class="btn">Claim Gift <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Wannahookup DOI Dating">
+                    </div>
+                    <div class="card-content">
+                        <h3>Wannahookup DOI Dating</h3>
+                        <p>Exclusive dating opportunities for professionals. Connect with like-minded individuals in your area through our verified platform.</p>
+                        <a href="https://cghecba.posttingoal.com/c/df5bd73cca2c8?sub1=shoaib" class="btn">Join Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AffBuild Offers -->
+        <section class="provider-section">
+            <div class="provider-header">
+                <div class="provider-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h2>AffBuild Offers</h2>
+            </div>
+            <div class="offers-container">
+                <div class="offer-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Rewards US - CashApp">
+                    </div>
+                    <div class="card-content">
+                        <h3>Rewards US - CashApp</h3>
+                        <p>Get exclusive CashApp rewards just for signing up. Earn money for completing simple tasks and referring friends to the platform.</p>
+                        <a href="http://smrturl.click/c?a=51220&o=30118&s1=shoaib" class="btn">Get Reward <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="PrimeRewardSpot - Burger King Samples">
+                    </div>
+                    <div class="card-content">
+                        <h3>PrimeRewardSpot - Burger King Samples</h3>
+                        <p>Try new Burger King menu items for free! Sign up to receive exclusive samples and special promotions from America's favorite burger chain.</p>
+                        <a href="http://smrturl.click/c?a=51220&o=30117&s1=shoaib" class="btn">Get Samples <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Green Line Offers -->
+        <section class="provider-section">
+            <div class="provider-header">
+                <div class="provider-icon">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <h2>Job Green Line Offers</h2>
+            </div>
+            <div class="offers-container">
+                <div class="offer-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="OkWoW CashApp $750">
+                    </div>
+                    <div class="card-content">
+                        <h3>OkWoW CashApp $750</h3>
+                        <p>Special limited-time offer! Sign up through our link to qualify for a $750 CashApp bonus. Terms and conditions apply.</p>
+                        <a href="https://www.gn3atrk.com/21RTTF3Q/35RTRGH8/?sub1=shoaib" class="btn">Claim $750 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="footer-note">
+            <p>All offers are subject to terms and conditions. Please review each offer carefully before applying.</p>
+            <p>© 2023 USA Job Offers & Rewards. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Add animation to cards when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const offerCards = document.querySelectorAll('.offer-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            offerCards.forEach(card => {
+                card.style.opacity = "0";
+                card.style.transform = "translateY(20px)";
+                card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+                observer.observe(card);
+            });
+            
+            // Add button click tracking
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const offerTitle = this.closest('.offer-card').querySelector('h3').textContent;
+                    console.log(`Offer clicked: ${offerTitle}`);
+                    // In a real implementation, you would send this data to analytics
+                });
+            });
+        });
+    </script>
+</body>
+</html>
